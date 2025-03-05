@@ -1,23 +1,49 @@
-kartturdocs:
-  - title: Karttur site content
+jekylldocs:
+  - title: Jekyll doc system
     children:
-      - title: "website setup"
-        url: /websetup/
-      - title: "ide config"
-        url: /ideconfig/
+      - title: "Intro Pages"
+        url: /websetup/jekyll/jekyllpages/
+      - title: "Jekyll Posts"
+        url: /websetup/jekyll/jekyllposts/
+      - title: "Ruby Collection"
+        url: /websetup/ruby/
 
 # main links
 main:
-  - title: "Home"
-    url: /
-    description: Site root
-  - title: "About"
-    url: /about/
-    description: about Karttur
+
+  - title: "Intro Pages"
+    url: /websetup/jekyll/jekyllpages/
+    description: jekyll pages as part of your site
+  - title: "Jekyll Posts"
+    url: /websetup/jekyll/jekyllposts/
+    description: jekyll posts as part of your site
+  - title: "Ruby Collection"
+    url: /websetup/ruby/
+    description: jekyll posts as part of your site
+  - title: "GitHub Collection"
+    url: /websetup/github/
+    description: Publishing your Jekyll theme on GitHub
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
   #   url: /collection-archive/
+  #- title: "GitHub"
+  #  url: /websetup/github/
+  #- title: "Sitemap"
+  #  url: /websetup/sitemap/
+  #- title: "ImageMagick"
+  #  url: /websetup/imagemagick/
+  #- title: "ffmpeg"
+  #  url: /websetup/ffmpeg/
+  - title: "Front"
+    url: /websetup/
+    description: Websetup root
+  - title: "About"
+    url: /about/
+    description: about Karttur
+  - title: "Home"
+    url: /
+    description: Karttur.com home
 
   #- title: "ffmpeg"
   #    url: /ffmpeg/

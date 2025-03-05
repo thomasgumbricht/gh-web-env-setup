@@ -1,51 +1,112 @@
 ---
 layout: single
-permalink: /blog/websetup/
+permalink: /websetup/jekyll/jekyll_posts01-basics/
 author_profile: true
 toc: true
-title:  "Working environment setup for static website"
-excerpt: "Setting up the Karttur.com website with Ruby, Jekyll and the theme Minimal mistakes."
-date:   2024-11-18 11:13:03 +0200
-last_modified_at:   2024-11-18 11:13:03 +0200
+title:  "Posts in Jekyll: 1. basics"
+excerpt: "How to set front matter in Jekyll posts and basic options for layout and content using the theme Minimal Mistakes."
+date:   2024-09-20 12:13:03 +0200
+last_modified_at:   2024-09-24 12:13:03 +0200
 toc: true
 categories:
-  - home/websetup
+  - jekyllposts
 tags:
-  - website builder
   - jekyll
   - Minimal Mistakes
 ---
 
-# Working environment for static websites
+## Posts
 
-This blog introduces [Jekyll](https://jekyllrb.com) for building static websites for blogs, portfolios, articles, photos etc. Jekyll takes textfiles written in [markdown](https://www.markdownguide.org/getting-started/) and converts them to web-pages. One great advantage with Jekyll is that [GitHub](https://github.com) supports free hosting of Jekyll pages. This in essence means that you can build a website and host it for free using Jekyll and deploying on GitHub.
+Post files must be located in the <span class='file'>\_posts</span> folder of your Jekyll site. This docuemnt if itself an example of a _post_, setup using the theme [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes).
 
-## Jekyll Pages, Posts and Collections
+The name of a post file must start with a date followed by a hyphen ("-") using this format:
 
-In Jekyll, the organisation of published documents included in a site can use one of three scopes: _pages_, _posts_ and _collections_. The basic scope behind _pages_, _posts_ and _collections_ are:
+```
+YYYY-MM-DD-file_name.md
+```
+{: .no-copy}
 
-- **pages**: for single documents not part of any blog, series or other compilation, but that can be the portal for any such compilation,
-- **posts**: a compilation of associated texts where the temporal sequence (date) is regarded (i.e. blog), and
-- **collections**: a compilation of associated texts without temporal sequence.
+### _\_config.yml_ and front matter
 
-In this blog I have used all three scopes and at the same time tried to make it into a manual for how to setup and publish a website using [Jekyll](https://jekyllrb.com).
+Posts are mostly used for blogs that are published over time and should have both _date_, _title_ and preferably also an _excerpt_ key in the post file front matter (otherwise the first paragraph is used as excerpt - see the [Jekyll document on Posts](https://jekyllrb.com/docs/posts/)):
 
-Jekyll is written in the programming language [Ruby](https://www.ruby-lang.org/en/). Ruby is an open source language were bits and pieces ("packages") are written and published as "gems". How to setup Ruby and its gems is overhauled in the [Ruby collection](/websetup/ruby). How to create different layouts and contents for web sites using Jekyll is the topic of the [Introduction Pages](/websetup/jekyll/jekyllpages) and the [Jekyll Posts](/websetup/jekyll/jekyllposts).
+```
+title:  "Posts in Jekyll: 1. basics"
+excerpt: "How to set front matter in Jekyll posts and basic options for layout and content using the theme Minimal Mistakes."
+date: 2024-09-20 12:13:03 +0200
+last_modified_at: 2024-09-20 12:13:03 +0200
+```
+{: .no-copy}
 
-## Jekyll themes
+The keys for _date_ and _last_modified_at_ are optional, but I prefer to include them to keep track of when I made the latest changes. For more details on displaying post dates see the Minimal Mistakes posts [Layout: Post Date Enabled][mmistakes-layout-post-date] and [Layout: Post Date Disabled][mmistakes-layout-post-date-disabled].
 
-The community engaged in developing Ruby Gems for Jekyll is extensive and active. This means that there are many gems available for converting _markdown_ text files to web-pages. There are hundreds of different Jekyll _themes_ to choose from - each generate a different layout from the same basic text (with some additional tweaks required). Many of the themes are Open Source, but there are also themes that comes with a fee.
+For posts, the author of the theme [Minimal Mistakes][mmistakes-posts]recommends the following settings in <span class='file'>\_config.yml</span> (I added the _show_date_ key):
 
-[GitHub officially supports about a dozen or so theme](https://pages.github.com/themes/), but you can deploy any theme on GitHub - you might just have to tweak it a bit extra.
+```
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      show_date: true
+      read_time: true
+      share: true
+      related: true
+```
+{: .no-copy}
 
-The site [Best Jekyll Themes](https://www.bestjekyllthemes.com) has collected about 200 of the most popular Jekyll themes. Other galleries with Jekyll themes include:
+Transferred to the front matter of the _posts_ document itself this becomes:
 
-- [GitHub.com #jekyll-theme repos](https://github.com/topics/jekyll-theme)
-- [jamstackthemes.dev](https://jamstackthemes.dev/ssg/jekyll/)
-- [jekyllthemes.org](http://jekyllthemes.org)
-- [jekyllthemes.io](https://jekyllthemes.io)
-- [jekyll-themes.com](https://jekyll-themes.com)
+```
+layout: single
+author_profile: true
+show_date: true
+read_time: true
+share: true
+related: true
+```
+{: .no-copy}
 
-## Karttur's Jekyll setup
+Combined with the post local keys, the complete front matter then becomes:
 
-This blog is about setting up Karttur's website using [Jekyll](https://jekyllrb.com) and the theme [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) by Michael Rose. The blog also covers some tricks and tips and how to customise a theme.
+```
+layout: single
+author_profile: true
+read_time: true
+share: true
+related: true
+title:  "Posts in Jekyll: 1. basics"
+excerpt: "How to set front matter in Jekyll posts and basic options for layout and content using the theme Minimal Mistakes."
+date:   2024-09-20 12:13:03 +0200
+last_modified_at: 2024-09-20 12:13:03 +0200
+```
+{: .no-copy}
+
+Key values set in the _posts_ file front matter has precedence over values set in <span class='file'>\_config.yml</span> if a key:value pair is set in both.
+
+Posts usually also have keys for _categories_ and _tags_. Each post can belong to multiple categories and have multiple tags. In the theme [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/aciform/antiquarianism/arrangement/asmodeus/broder/buying/championship/chastening/disinclination/disinfection/dispatch/echappee/enphagy/edge-case-many-categories/), the categories and tags are shown towards the end of a post.
+
+#### Table of content
+
+To set a table of content in a post, follow the same syntax as outlined for [pages](/jekyllpages/index.html#table-of-content).
+
+## Resources
+
+[Jekyll page on posts][jekyll-posts]
+
+[Minimal Mistakes - posts][mmistakes-posts]
+
+[Minimal Mistakes - layout: post date enabled][mmistakes-layout-post-date]
+
+[Minimal Mistakes - layout: post date disabled][mmistakes-layout-post-date-disabled]
+
+[jekyll-posts]: https://jekyllrb.com/docs/posts/
+
+[mmistakes-posts]: https://mmistakes.github.io/minimal-mistakes/docs/posts/
+
+[mmistakes-layout-post-date]: https://mmistakes.github.io/minimal-mistakes/layout-post-date/
+
+[mmistakes-layout-post-date-disabled]: https://mmistakes.github.io/minimal-mistakes/layout-post-date-disabled/

@@ -1,6 +1,6 @@
 ---
-permalink: /websetup/sitemap/
-title: "Sitemap"
+permalink: /websetup/imagemagick/
+title: "Image Magick"
 excerpt: "Sitemap for karttur's GitHub pages."
 layouts_gallery:
   - url: /assets/images/mm-layout-splash.png
