@@ -1,0 +1,25 @@
+kartturdocs:
+  - title: Karttur site content
+    children:
+      - title: "website setup"
+        url: /websetup/
+      - title: "ide config"
+        url: /ideconfig/
+
+# main links
+main:
+  - title: "Home"
+    url: /
+    description: Site root
+  - title: "About"
+    url: /about/
+    description: about Karttur
+  # - title: "Sample Posts"
+  #   url: /year-archive/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+
+  #- title: "ffmpeg"
+  #    url: /ffmpeg/
+  #- title: "GitHub"
+  #  url: /github/
